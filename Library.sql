@@ -1,5 +1,15 @@
 create database library;
 use library;
+create table address(
+address_id int auto_increment primary key,
+branch_name varchar(30),
+street_number int,
+street_name varchar(30),
+town varchar(30),
+city varchar(30),
+postcode varchar(10));
+
+use library;
 create table branch(
 branch_id int auto_increment primary key,
 branch_number int not null,
@@ -80,6 +90,21 @@ date_loaned date,
 date_returned date);
 
 select * from loans;
+
+use library;
+create table author(
+author_id int primary key auto_increment,
+first_name varchar(20),
+last_name varchar(20));
+
+use library;
+create table book_author(
+book_author_id int primary key auto_increment,
+book_id int not null,
+foreign key (book_id) references books(book_id),
+author_id int not null,
+foreign key (author_id) references author(author_id));
+
 
 
 
