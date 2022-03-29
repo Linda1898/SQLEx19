@@ -105,10 +105,37 @@ foreign key (book_id) references books(book_id),
 author_id int not null,
 foreign key (author_id) references author(author_id));
 
+insert into staff(staff_id, employee_number, staff_name, phone, email, branch_id, job_role, salary, national_insurance)
+ values (1, 567, 'Jason', 0786948756, 'js@hotmail.com', 1, 'librarian', 20000, 'ah34567');
 
+insert into address
+values (3, 'London', 34, 'Grey Street', 'Kensington', 'London', 'L2 7HG');
 
+select * from address;
 
-    
+insert into author
+values (1, 'JK', 'Rowling'),
+	   (2, 'Anne', 'Fine'),
+       (3, 'James', 'Herbert');
+
+select * from author;
+
+insert into branch
+values(1, 23, 078541254, 'Leeds', 20000),
+	  (2, 123, 075212442, 'Newcastle', 150000),
+      (3, 78, 0457812557, 'London', 250000);
+
+select * from branch;
+
+insert into users
+values(1, 547854, 'John Smith', 45, '2022-01-12', '2005-05-10', 5.00, 4.00, 'yes', 'yes');
+
+select * from users;
+
+insert into users
+values(2, 544854, 'Mary White', 28, '2022-01-10', '2018-08-02', 8.00, 4.50, 'yes', 'yes'),
+	  (3, 687854, 'Sarah Little', 18, '2022-01-15', '2017-01-17', 5.50, 2.00, 'yes', 'yes');
+
 
     
 
