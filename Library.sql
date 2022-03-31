@@ -1,5 +1,7 @@
-create database library;
-use library;
+drop database library3;
+create database library3;
+use library3;
+
 create table address(
 address_id int auto_increment primary key,
 branch_name varchar(30),
@@ -9,7 +11,7 @@ town varchar(30),
 city varchar(30),
 postcode varchar(10));
 
-use library;
+
 create table branch(
 branch_id int auto_increment primary key,
 branch_number int not null,
@@ -17,9 +19,7 @@ branch_phone varchar(70) not null,
 branch_address varchar(100) not null,
 branch_annual_budget decimal not null);
 
-select * from branch;
 
-use library;
 create table users(
 user_id int primary key auto_increment,
 library_card int not null,
@@ -32,9 +32,7 @@ fine_cost2 decimal,
 fine_outstanding varchar(3) not null,
 blocked varchar(3) not null);
 
-select * from users;
 
-use library;
 create table books(
 book_id int primary key auto_increment,
 dewy_decimal_number decimal,
@@ -47,11 +45,10 @@ year_published int not null,
 branch_id int not null,
 foreign key (branch_id) references branch(branch_id),
 copy_number int not null,
-on_loan varchar(3) not null);
+on_loan varchar(3) not null,
+reserved varchar(3) not null);
 
-select * from books;
 
-use library;
 create table staff(
 staff_id int primary key auto_increment,
 employee_number int not null,
@@ -64,9 +61,7 @@ job_role varchar(30) not null,
 salary decimal,
 national_insurance varchar(9) not null);
 
-select * from staff;
 
-use library;
 create table reservations(
 reservation_id int primary key auto_increment,
 user_id int not null,
@@ -75,9 +70,7 @@ book_id int not null,
 foreign key (book_id) references books(book_id),
 reservation_date date);
 
-select * from reservations;
 
-use library;
 create table loans(
 loan_id int primary key auto_increment,
 user_id int not null,
@@ -89,15 +82,13 @@ foreign key (book_id) references books(book_id),
 date_loaned date,
 date_returned date);
 
-select * from loans;
 
-use library;
 create table author(
 author_id int primary key auto_increment,
 first_name varchar(20),
 last_name varchar(20));
 
-use library;
+
 create table book_author(
 book_author_id int primary key auto_increment,
 book_id int not null,
@@ -137,6 +128,23 @@ values (1, 'JK', 'Rowling'),
 	   (2, 'Anne', 'Fine'),
        (3, 'James', 'Herbert');
 
+<<<<<<< HEAD
+=======
+insert into branch
+values(1, 23, 078541254, 'Leeds', 20000),
+	  (2, 123, 075212442, 'Newcastle', 150000),
+      (3, 78, 0457812557, 'London', 250000);
+
+insert into users
+values(1, 547854, 'John Smith', 45, '2022-01-12', '2005-05-10', 5.00, 1.00, 'no', 'no'),
+	  (2, 544854, 'Mary White', 28, '2022-01-10', '2018-08-02', 8.00, 1.00, 'no', 'no'),
+	  (3, 687854, 'Sarah Little', 18, '2022-01-15', '2017-01-17', 6.00, 2.00, 'yes', 'yes');
+
+insert into books
+values(1, 125.789, 'th8795147', 'Harry Potter and the Prisoner of Azkaban', 'JK Rowling', null, 'fantasy', '2000', 1, 2, 'yes', 'yes'),
+	  (2, 781.985, 'kj7854785', 'Notso Hotso', 'Anne Fine', null, 'childrens', 2001, 1, 3, 'yes', 'yes'),
+      (3, 699.744, 'yt7125485', 'Ash', 'James Herbert', null, 'horror', 2010, 2, 1, 'no', 'no');
+>>>>>>> 1c7eda98dd4507f651a49b3db485bb495a33349c
       
 insert into book_author
 values(1, 1, 1),
@@ -152,4 +160,7 @@ insert into reservations
 values(1, 2, 1, '2022-05-02'),
 	  (2, 1, 2, '2022-02-15');
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1c7eda98dd4507f651a49b3db485bb495a33349c
