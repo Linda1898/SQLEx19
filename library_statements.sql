@@ -1,12 +1,13 @@
--- CHECK IF A BOOK IS ON LOAN
-use books;
-select book_id from on_loan;
+-- CHECK IF A BOOK IS ON LOAN - example = book_id 1
+use library3;
+select book_title, on_loan, reserved from books where book_id = 1;
 
--- BORROW A BOOK, need to know book_id and replace it in the last line (where id = book_id)
--- use loan;
--- insert into loan (user_id,	branch_id,	book_id,  date_loaned)  values ( user_id, branch_id, book_id, 00-00-00);
--- use books;
--- update loan set on_loan = "YES" where id = book_id;
+-- BORROW A BOOK - example = user_id 2 borrowing book_id 1 and unreserving it
+insert into loans (user_id, branch_id, book_id,  date_loaned)  values (2, 1, 1, "2022-05-02");
+update books set on_loan = "yes" where book_id = 1;
+update books set reserved = "NO" where book_id = 1;
+
+
 
 
 
