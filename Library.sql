@@ -1,6 +1,4 @@
-drop database library3;
-create database library3;
-use library3;
+use library;
 
 create table address(
 address_id int auto_increment primary key,
@@ -88,6 +86,11 @@ author_id int primary key auto_increment,
 first_name varchar(20),
 last_name varchar(20));
 
+select * from some_table;
+
+
+select * from users;
+select * from author;
 
 create table book_author(
 book_author_id int primary key auto_increment,
@@ -127,24 +130,6 @@ insert into author
 values (1, 'JK', 'Rowling'),
 	   (2, 'Anne', 'Fine'),
        (3, 'James', 'Herbert');
-
-<<<<<<< HEAD
-=======
-insert into branch
-values(1, 23, 078541254, 'Leeds', 20000),
-	  (2, 123, 075212442, 'Newcastle', 150000),
-      (3, 78, 0457812557, 'London', 250000);
-
-insert into users
-values(1, 547854, 'John Smith', 45, '2022-01-12', '2005-05-10', 5.00, 1.00, 'no', 'no'),
-	  (2, 544854, 'Mary White', 28, '2022-01-10', '2018-08-02', 8.00, 1.00, 'no', 'no'),
-	  (3, 687854, 'Sarah Little', 18, '2022-01-15', '2017-01-17', 6.00, 2.00, 'yes', 'yes');
-
-insert into books
-values(1, 125.789, 'th8795147', 'Harry Potter and the Prisoner of Azkaban', 'JK Rowling', null, 'fantasy', '2000', 1, 2, 'yes', 'yes'),
-	  (2, 781.985, 'kj7854785', 'Notso Hotso', 'Anne Fine', null, 'childrens', 2001, 1, 3, 'yes', 'yes'),
-      (3, 699.744, 'yt7125485', 'Ash', 'James Herbert', null, 'horror', 2010, 2, 1, 'no', 'no');
->>>>>>> 1c7eda98dd4507f651a49b3db485bb495a33349c
       
 insert into book_author
 values(1, 1, 1),
@@ -160,7 +145,8 @@ insert into reservations
 values(1, 2, 1, '2022-05-02'),
 	  (2, 1, 2, '2022-02-15');
 
-<<<<<<< HEAD
+use library;
+select user_id, book_id, date_loaned, date_returned from loans where user_id= 1;
 
-=======
->>>>>>> 1c7eda98dd4507f651a49b3db485bb495a33349c
+select * from users where fine_cost >=6;
+
