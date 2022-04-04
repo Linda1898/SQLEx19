@@ -86,12 +86,6 @@ author_id int primary key auto_increment,
 first_name varchar(20),
 last_name varchar(20));
 
-select * from some_table;
-
-
-select * from users;
-select * from author;
-
 create table book_author(
 book_author_id int primary key auto_increment,
 book_id int not null,
@@ -149,4 +143,23 @@ use library;
 select user_id, book_id, date_loaned, date_returned from loans where user_id= 1;
 
 select * from users where fine_cost >=6;
+select * from some_table;
+
+-- select concat(first_name, " " last_name) as "full_name" from author;
+
+select distinct user_age from users;
+
+select  user_name from users where user_name in ('Harry Potter', 'Ron Weasley', 'Draco Malfoy');
+
+select * from users where user_age >18;
+
+select user_name from users where user_name not in ('Harry Potter', 'Ron Weasley', 'Draco Malfoy');
+
+select * from users where user_name like 's%';
+
+select * from users where user_name = "Sirius Black" and user_age = "58";
+
+select * from users order by user_age desc;
+
+-- select user_name, user_age, fine_outstanding, blocked from users inner join books on book_title where book_id = 1;
 
